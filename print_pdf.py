@@ -11,5 +11,5 @@ def print_pdf(pdfFile, path_to_Acrobat_exe=PATH_TO_ACROBAT_EXE):
 
 
 if __name__ == "__main__":
-    pdfFile = "./a.pdf"
+    pdfFile = "../download/a.pdf"
     print_pdf(pdfFile)
