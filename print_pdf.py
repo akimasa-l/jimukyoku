@@ -1,6 +1,8 @@
 import subprocess
 
-def print_pdf(pdfFile,path_to_Acrobat_exe="C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat\Acrobat.exe"):
+PATH_TO_ACROBAT_EXE="C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat\Acrobat.exe"
+
+def print_pdf(pdfFile,path_to_Acrobat_exe=PATH_TO_ACROBAT_EXE):
     
     command=f"{path_to_Acrobat_exe} /N /T {pdfFile}"
     
