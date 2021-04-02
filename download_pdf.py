@@ -1,19 +1,22 @@
 import requests
 import json
 
-downloadFolder="../download/"
+downloadFolder = "../download/"
 
-def getFileNameFromHeaders(headers:requests.structures.CaseInsensitiveDict):
+
+def getFileNameFromHeaders(headers: requests.structures.CaseInsensitiveDict):
     return "a.pdf"
+
 
 def download_pdf(url):
     response = requests.get(url)
     print(response.status_code)
     print(response.headers['Content-Disposition'])  # TODO:ここからファイル名を取り出す方法
-    path=downloadFolder+getFileNameFromHeaders(response.headers)
+    path = downloadFolder+getFileNameFromHeaders(response.headers)
     with open(path, mode="wb") as f:
         f.write(response.content)
     return path
+
 
 if __name__ == '__main__':
     url = "https://drive.google.com/uc?id=1to7aAGQ7hmZseactjOiXwDTHl2Dgfhze&export=download"
