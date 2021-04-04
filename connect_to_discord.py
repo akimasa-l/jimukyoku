@@ -1,7 +1,8 @@
-import discord
 import aiohttp
-import print_pdf
+import discord
+
 import download_pdf
+import print_pdf
 
 with open("../discord/token.txt") as f:
     token = f.read().rstrip()
