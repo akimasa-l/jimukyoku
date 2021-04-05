@@ -25,8 +25,9 @@ def print_pdf_color(pdfFile: str, copies: int, size: str, path_to_Acrobat_exe: s
     pyautogui.press("enter")
     pyautogui.press("F4")
     pyautogui.typewrite(size)
+    pyautogui.press("enter", 2, gui_base.DEFAULT_INTERVAL)
 
-    gui_base.press_tab(4)
+    gui_base.press_tab(7)
     enter_copies(copies)  # 印刷数を入力
 
     pyautogui.hotkey("ctrl", "enter")  # 印刷ボタン
@@ -38,4 +39,4 @@ def print_pdf_color(pdfFile: str, copies: int, size: str, path_to_Acrobat_exe: s
 
 if __name__ == "__main__":
     pdfFile = "../download/a.pdf"
-    print_pdf_color(pdfFile, 100)
+    print_pdf_color(pdfFile, 100, "A4")
