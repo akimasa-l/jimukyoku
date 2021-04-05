@@ -14,12 +14,17 @@ def enter_copies(copies: int):
 PATH_TO_ACROBAT_EXE = "C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat\Acrobat.exe"
 
 
-def print_pdf_color(pdfFile: str, copies: int, path_to_Acrobat_exe: str = PATH_TO_ACROBAT_EXE):
+def print_pdf_color(pdfFile: str, copies: int, size: str, path_to_Acrobat_exe: str = PATH_TO_ACROBAT_EXE):
 
     command = f"{path_to_Acrobat_exe} /P {pdfFile}"
     a = subprocess.Popen(command)
 
     time.sleep(2)
+
+    gui_base.press_shift_tab(3)
+    pyautogui.press("enter")
+    pyautogui.press("F4")
+    pyautogui.typewrite(size)
 
     gui_base.press_tab(4)
     enter_copies(copies)  # 印刷数を入力
